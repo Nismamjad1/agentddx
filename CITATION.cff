@@ -4,8 +4,8 @@ message: "If you use this software or its released evaluation logs, please cite 
 type: software
 # Authors are withheld while the accompanying paper is under double-blind review.
 # Replace this block with the author list before the camera-ready release.
-authors:
-  - name: "The AgentDDx Authors"
+authors: 
+  - name: nisma amjad
 license: MIT
 abstract: >-
   An agentic differential-diagnosis system and a paired evaluation showing that
