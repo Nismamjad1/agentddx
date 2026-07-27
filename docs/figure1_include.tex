@@ -1,0 +1,20 @@
+% Requires: \usepackage{graphicx}
+% The PDF export is vector; no --shell-escape or svg package needed.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{agentddx_architecture_detailed}
+\caption{\textbf{AgentDDx architecture.} Stages 1, 2, 4 and 5 are LLM calls issued to a single
+shared backbone (Llama-3.3-70B-Instruct via OpenRouter); stage 3 is the only external tool call.
+Stage 2 treats each of the four answer options as a candidate diagnosis and composes a structured
+MeSH query per candidate, falling back to a simplified free-text query when a structured query
+returns fewer than two articles and merging the results by PMID. Stage 4 scores every retrieved
+abstract on a 0--1 scale and discards those below 0.4, except that a candidate's top-ranked
+abstract is retained when none clears the threshold, so each candidate contributes at least one
+paper. Stage 5 answers under fixed decoding settings (temperature 0.1, at most 900 generated
+tokens) and ends its response with \texttt{Answer: <letter>}, which is extracted and mapped back
+through the stored option permutation before scoring. The entity summary reaches the answering
+prompt by a path that bypasses stages 2--4; the ablation of Section~\ref{sec:ablation} cuts the
+entity and evidence paths independently. The interactive branch produces open-ended output that
+multiple-choice accuracy cannot score and is assessed qualitatively in Section~\ref{sec:qual}.}
+\label{fig:architecture}
+\end{figure*}

@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "date": "2026-07-24T15:34:15.111385",
+    "total_questions": 1273,
+    "paired_questions": 1273,
+    "conditions": [
+      "full_system"
+    ],
+    "debiasing": "option_shuffling (shared layout across conditions)",
+    "seed": 42,
+    "max_tokens": 900,
+    "temperature": 0.1,
+    "scoring": "unparseable ('X') counted as INCORRECT for all conditions"
+  },
+  "accuracy": {
+    "full_system": {
+      "correct": 980,
+      "total": 1273,
+      "accuracy": 77.0,
+      "ci_95_lower": 74.5,
+      "ci_95_upper": 79.5
+    }
+  },
+  "parse_failures": {
+    "full_system": {
+      "n_unparsed": 0,
+      "rate_pct": 0.0
+    }
+  },
+  "per_category": {
+    "anatomy": {
+      "full_system": {
+        "accuracy": 67.3,
+        "n": 52
+      }
+    },
+    "diagnosis": {
+      "full_system": {
+        "accuracy": 82.4,
+        "n": 262
+      }
+    },
+    "mechanism": {
+      "full_system": {
+        "accuracy": 82.5,
+        "n": 40
+      }
+    },
+    "other": {
+      "full_system": {
+        "accuracy": 72.6,
+        "n": 412
+      }
+    },
+    "pharmacology": {
+      "full_system": {
+        "accuracy": 66.7,
+        "n": 6
+      }
+    },
+    "prevention": {
+      "full_system": {
+        "accuracy": 68.0,
+        "n": 25
+      }
+    },
+    "treatment": {
+      "full_system": {
+        "accuracy": 79.0,
+        "n": 476
+      }
+    }
+  },
+  "statistical_tests": {},
+  "error_analysis": {}
+}

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "AgentDDx: When Agentic Retrieval Fails to Help"
+message: "If you use this software or its released evaluation logs, please cite the accompanying paper."
+type: software
+# Authors are withheld while the accompanying paper is under double-blind review.
+# Replace this block with the author list before the camera-ready release.
+authors:
+  - name: "The AgentDDx Authors"
+license: MIT
+abstract: >-
+  An agentic differential-diagnosis system and a paired evaluation showing that
+  retrieval does not improve closed-form medical question answering for a strong
+  LLM, and that added pipeline sophistication degrades it.
+keywords:
+  - retrieval-augmented generation
+  - medical question answering
+  - agentic systems
+  - MedQA

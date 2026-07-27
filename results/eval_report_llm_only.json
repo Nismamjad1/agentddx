@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "date": "2026-07-22T07:20:53.403882",
+    "total_questions": 1273,
+    "paired_questions": 1273,
+    "conditions": [
+      "llm_only"
+    ],
+    "debiasing": "option_shuffling (shared layout across conditions)",
+    "seed": 42,
+    "max_tokens": 900,
+    "temperature": 0.1,
+    "scoring": "unparseable ('X') counted as INCORRECT for all conditions"
+  },
+  "accuracy": {
+    "llm_only": {
+      "correct": 1065,
+      "total": 1273,
+      "accuracy": 83.7,
+      "ci_95_lower": 81.6,
+      "ci_95_upper": 85.7
+    }
+  },
+  "parse_failures": {
+    "llm_only": {
+      "n_unparsed": 0,
+      "rate_pct": 0.0
+    }
+  },
+  "per_category": {
+    "anatomy": {
+      "llm_only": {
+        "accuracy": 78.8,
+        "n": 52
+      }
+    },
+    "diagnosis": {
+      "llm_only": {
+        "accuracy": 88.2,
+        "n": 262
+      }
+    },
+    "mechanism": {
+      "llm_only": {
+        "accuracy": 90.0,
+        "n": 40
+      }
+    },
+    "other": {
+      "llm_only": {
+        "accuracy": 80.3,
+        "n": 412
+      }
+    },
+    "pharmacology": {
+      "llm_only": {
+        "accuracy": 83.3,
+        "n": 6
+      }
+    },
+    "prevention": {
+      "llm_only": {
+        "accuracy": 84.0,
+        "n": 25
+      }
+    },
+    "treatment": {
+      "llm_only": {
+        "accuracy": 84.0,
+        "n": 476
+      }
+    }
+  },
+  "statistical_tests": {},
+  "error_analysis": {}
+}

@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "date": "2026-07-24T15:34:15.968555",
+    "total_questions": 1273,
+    "paired_questions": 1273,
+    "conditions": [
+      "llm_only",
+      "llm_pubmed",
+      "full_system"
+    ],
+    "debiasing": "option_shuffling (shared layout across conditions)",
+    "seed": 42,
+    "max_tokens": 900,
+    "temperature": 0.1,
+    "scoring": "unparseable ('X') counted as INCORRECT for all conditions"
+  },
+  "accuracy": {
+    "llm_only": {
+      "correct": 1065,
+      "total": 1273,
+      "accuracy": 83.7,
+      "ci_95_lower": 81.6,
+      "ci_95_upper": 85.7
+    },
+    "llm_pubmed": {
+      "correct": 1067,
+      "total": 1273,
+      "accuracy": 83.8,
+      "ci_95_lower": 81.7,
+      "ci_95_upper": 85.8
+    },
+    "full_system": {
+      "correct": 980,
+      "total": 1273,
+      "accuracy": 77.0,
+      "ci_95_lower": 74.5,
+      "ci_95_upper": 79.5
+    }
+  },
+  "parse_failures": {
+    "llm_only": {
+      "n_unparsed": 0,
+      "rate_pct": 0.0
+    },
+    "llm_pubmed": {
+      "n_unparsed": 0,
+      "rate_pct": 0.0
+    },
+    "full_system": {
+      "n_unparsed": 0,
+      "rate_pct": 0.0
+    }
+  },
+  "per_category": {
+    "anatomy": {
+      "llm_only": {
+        "accuracy": 78.8,
+        "n": 52
+      },
+      "llm_pubmed": {
+        "accuracy": 73.1,
+        "n": 52
+      },
+      "full_system": {
+        "accuracy": 67.3,
+        "n": 52
+      }
+    },
+    "diagnosis": {
+      "llm_only": {
+        "accuracy": 88.2,
+        "n": 262
+      },
+      "llm_pubmed": {
+        "accuracy": 88.2,
+        "n": 262
+      },
+      "full_system": {
+        "accuracy": 82.4,
+        "n": 262
+      }
+    },
+    "mechanism": {
+      "llm_only": {
+        "accuracy": 90.0,
+        "n": 40
+      },
+      "llm_pubmed": {
+        "accuracy": 90.0,
+        "n": 40
+      },
+      "full_system": {
+        "accuracy": 82.5,
+        "n": 40
+      }
+    },
+    "other": {
+      "llm_only": {
+        "accuracy": 80.3,
+        "n": 412
+      },
+      "llm_pubmed": {
+        "accuracy": 81.1,
+        "n": 412
+      },
+      "full_system": {
+        "accuracy": 72.6,
+        "n": 412
+      }
+    },
+    "pharmacology": {
+      "llm_only": {
+        "accuracy": 83.3,
+        "n": 6
+      },
+      "llm_pubmed": {
+        "accuracy": 83.3,
+        "n": 6
+      },
+      "full_system": {
+        "accuracy": 66.7,
+        "n": 6
+      }
+    },
+    "prevention": {
+      "llm_only": {
+        "accuracy": 84.0,
+        "n": 25
+      },
+      "llm_pubmed": {
+        "accuracy": 84.0,
+        "n": 25
+      },
+      "full_system": {
+        "accuracy": 68.0,
+        "n": 25
+      }
+    },
+    "treatment": {
+      "llm_only": {
+        "accuracy": 84.0,
+        "n": 476
+      },
+      "llm_pubmed": {
+        "accuracy": 84.5,
+        "n": 476
+      },
+      "full_system": {
+        "accuracy": 79.0,
+        "n": 476
+      }
+    }
+  },
+  "statistical_tests": {
+    "llm_only_vs_llm_pubmed": {
+      "chi2": 0.0102,
+      "p_value": 0.9195,
+      "b": 48,
+      "c": 50
+    },
+    "llm_only_vs_full_system": {
+      "chi2": 36.1846,
+      "p_value": 0.0,
+      "b": 140,
+      "c": 55
+    },
+    "llm_pubmed_vs_full_system": {
+      "chi2": 37.1658,
+      "p_value": 0.0,
+      "b": 143,
+      "c": 56
+    }
+  },
+  "error_analysis": {
+    "retrieval_helped": 55,
+    "retrieval_hurt": 140,
+    "both_correct": 925,
+    "both_wrong": 153,
+    "net_effect": -85,
+    "degradation_recovery_rate": null
+  }
+}
