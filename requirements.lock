@@ -1,0 +1,35 @@
+# Exact versions resolved on 2026-07-27, used by the Docker image for
+# byte-identical environments. Regenerate with:
+#   pip install -r requirements.txt && pip freeze > requirements.lock
+
+aiohappyeyeballs==2.7.1
+aiohttp==3.14.3
+aiosignal==1.4.0
+annotated-types==0.8.0
+anyio==4.14.2
+attrs==26.1.0
+biopython==1.87
+click==8.4.2
+datasets==5.0.0
+dill==0.4.1
+filelock==3.32.0
+frozenlist==1.8.0
+fsspec==2026.4.0
+h11==0.16.0
+hf-xet==1.5.2
+httpcore==1.0.9
+httpx==0.28.1
+huggingface_hub==1.25.1
+jiter==0.16.0
+multidict==6.7.1
+multiprocess==0.70.19
+openai==2.49.0
+propcache==0.5.2
+pyarrow==25.0.0
+pydantic==2.13.4
+pydantic_core==2.46.4
+sniffio==1.3.1
+tqdm==4.70.0
+typing-inspection==0.4.2
+xxhash==3.8.1
+yarl==1.24.5

@@ -25,6 +25,19 @@ python scripts/verify_paper_numbers.py
 
 This makes no network calls and takes a few seconds. It recomputes each reported value and prints PASS/FAIL against the published figure.
 
+### In a container
+
+If you would rather not install anything, the default image needs no
+dependencies and no API key:
+
+```bash
+docker build -t agentddx .
+docker run --rm agentddx
+```
+
+The verification script imports only the Python standard library, so this image
+carries just the released logs and builds in seconds.
+
 ## Reproducing the evaluation from scratch
 
 Reproducing end to end requires an OpenRouter key and issues roughly 1,273 × 3 backbone calls plus PubMed traffic.
@@ -45,6 +58,20 @@ python evaluate.py --merge results/eval_llm_only.json \
                            results/eval_llm_pubmed.json \
                            results/eval_full_system.json
 ```
+
+The same run inside a container, with results written back to the host:
+
+```bash
+docker build --target full -t agentddx:full .
+docker run --rm --env-file .env -v "$PWD/results:/app/results" \
+    agentddx:full python evaluate.py --n 1273 --condition llm_only
+```
+
+`docker compose run --rm eval` wraps that, and `docker compose up demo` serves the
+interactive branch on http://localhost:8501. Dependencies inside the image are
+installed from `requirements.lock`, which pins exact versions; `requirements.txt`
+carries the looser constraints for a local install, and `requirements-demo.txt`
+adds Streamlit and FastAPI for the demo only.
 
 The component ablation of Table 3 runs on a fixed 200-question subset (seed 42) drawn from the same test split:
 
@@ -76,6 +103,8 @@ These are the properties that make the comparison interpretable, and they are en
 
 ```
 .
+├── Dockerfile               Two targets: verify (default) and full
+├── docker-compose.yml       Wrappers for verify / eval / demo
 ├── evaluate.py              Main three-condition evaluation harness
 ├── ablation.py              Five-condition component ablation (Table 3)
 ├── analyze_retrieval.py     Retrieval-volume and relevance analysis

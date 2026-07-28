@@ -1,4 +1,7 @@
-# Core LLM access (OpenRouter is OpenAI-API compatible)
+# Core dependencies — everything needed to reproduce the paper.
+# See requirements-demo.txt for the optional interactive demo.
+
+# LLM backbone (OpenRouter is OpenAI-API compatible)
 openai>=1.30.0
 python-dotenv>=1.0.0
 
@@ -8,8 +11,3 @@ biopython>=1.83
 # Benchmark loading and analysis
 datasets>=2.16.0
 numpy>=1.26.0
-
-# Interactive demo (optional — not needed to reproduce the paper)
-streamlit>=1.30.0
-fastapi>=0.104.0
-uvicorn>=0.24.0

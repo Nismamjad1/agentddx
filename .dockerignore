@@ -1,0 +1,27 @@
+# Secrets — must never enter the build context or an image layer
+.env
+*.key
+
+# Version control and CI
+.git
+.gitignore
+
+# Python artefacts
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+*.egg-info/
+
+# Scratch evaluation output (released copies live in results/logs/)
+results/eval_llm_only.json
+results/eval_llm_pubmed.json
+results/eval_full_system.json
+results/eval_merged_log.json
+results/ablation_*.json
+logs/
+*.log
+
+# Not needed at runtime
+docs/
+Makefile

@@ -1,0 +1,8 @@
+# Optional: the interactive branch (app.py, server.py).
+# Not required to reproduce any number in the paper.
+-r requirements.txt
+
+streamlit>=1.30.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-multipart>=0.0.9

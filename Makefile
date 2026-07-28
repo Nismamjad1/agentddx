@@ -1,4 +1,4 @@
-.PHONY: help install verify eval ablation demo clean
+.PHONY: help install verify eval ablation demo clean docker-verify docker-build
 
 help:
 	@echo "make install    Install dependencies"
@@ -7,6 +7,9 @@ help:
 	@echo "make ablation   Five-condition component ablation on the 200-question subset"
 	@echo "make demo       Launch the interactive Streamlit demo"
 	@echo "make clean      Remove caches and scratch evaluation checkpoints"
+	@echo ""
+	@echo "make docker-verify   Verify the paper's numbers in a container (no local Python)"
+	@echo "make docker-build    Build the full image for re-running the evaluation"
 
 install:
 	pip install -r requirements.txt
@@ -22,6 +25,13 @@ ablation:
 
 demo:
 	streamlit run app.py
+
+docker-verify:
+	docker build -t agentddx .
+	docker run --rm agentddx
+
+docker-build:
+	docker build --target full -t agentddx:full .
 
 clean:
 	find . -type d -name __pycache__ -prune -exec rm -rf {} +

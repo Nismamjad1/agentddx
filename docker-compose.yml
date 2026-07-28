@@ -1,0 +1,36 @@
+# Convenience wrapper around the two Dockerfile targets.
+#
+#   docker compose run --rm verify     Check every number in the paper (no key)
+#   docker compose run --rm eval       Re-run one condition (needs .env)
+#   docker compose up demo             Interactive demo on http://localhost:8501
+
+services:
+  verify:
+    build:
+      context: .
+      target: verify
+    command: python scripts/verify_paper_numbers.py
+
+  eval:
+    build:
+      context: .
+      target: full
+    env_file: .env
+    volumes:
+      - ./results:/app/results
+      - hf-cache:/app/.cache/huggingface
+    command: python evaluate.py --n 1273 --condition llm_only
+
+  demo:
+    build:
+      context: .
+      target: full
+    env_file: .env
+    ports:
+      - "8501:8501"
+    command: >-
+      sh -c "pip install -r requirements-demo.txt &&
+             streamlit run app.py --server.address 0.0.0.0 --server.port 8501"
+
+volumes:
+  hf-cache:
