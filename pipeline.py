@@ -44,7 +44,7 @@ def run_pipeline(
         callback("candidates", "running")
         # Build candidate list from entity context
         candidate_query = " ".join(entities.symptoms[:3] + entities.findings[:2])
-        # We'll use Groq to quickly suggest candidates
+        # Ask the backbone to suggest candidate diagnoses
         import json, re
         from utils import llm_call
         raw = llm_call(

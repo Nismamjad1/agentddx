@@ -1,8 +1,8 @@
 # AgentDDx
 
-Code and evaluation logs for **"AgentDDx: When Agentic Retrieval Fails to Help — A Paired Evaluation on Medical Question Answering."**
+Code and evaluation logs for **"AgentDDx: When Agentic Evidence Injection Degrades Accuracy — A Paired Evaluation on Medical Question Answering."**
 
-AgentDDx is an agentic differential-diagnosis system: it extracts structured clinical entities from a vignette, composes MeSH-aware PubMed queries for each candidate diagnosis, retrieves and relevance-filters the returned abstracts, and answers over the surviving evidence. This repository contains the system, the evaluation harness, and the per-question logs behind every number in the paper.
+AgentDDx is an agentic differential-diagnosis system: it extracts structured clinical entities from a vignette, composes MeSH-aware PubMed queries for each candidate diagnosis, retrieves and relevance-filters the returned abstracts, and answers over the surviving evidence. This repository contains the system, the evaluation harness, and the per-question logs behind every number in the paper's quantitative evaluation. The eight illustrative cases of the paper's qualitative section are not part of this release.
 
 The headline finding is negative. On the full MedQA-USMLE test set, retrieval does not improve closed-form accuracy for a strong backbone, and the full agentic pipeline significantly degrades it.
 
@@ -139,7 +139,7 @@ The benchmark is MedQA-USMLE, four-option variant, redistributed as `GBaker/MedQ
 
 ## Scope and limitations
 
-The evaluation measures one narrow quantity: whether the correct option is selected on a multiple-choice benchmark. That is the right instrument for the question the paper asks, and a poor one for the broader capabilities of an agentic diagnostic system. AgentDDx's open-ended differential, evidence attribution and confidence-triggered follow-up question cannot be scored by option accuracy; the interactive branch is exercised by `app.py` and assessed qualitatively in the paper rather than by this harness.
+The evaluation measures one narrow quantity: whether the correct option is selected on a multiple-choice benchmark. The interactive branch asks a follow-up question when the reasoning agent judges a case ambiguous (`needs_more_info` in `agents/reasoning_agent.py`); confidence is reported alongside but does not gate the question. That is the right instrument for the question the paper asks, and a poor one for the broader capabilities of an agentic diagnostic system. AgentDDx's open-ended differential, evidence attribution and confidence-triggered follow-up question cannot be scored by option accuracy; the interactive branch is exercised by `app.py` and assessed qualitatively in the paper rather than by this harness.
 
 Three limitations bound the quantitative claims. The conditions differ in the quantity as well as the quality of injected text, so a context-length effect cannot be separated from a knowledge-conflict one. The naive condition's truncated queries retrieved on only 1.3% of questions, so it functions as a second no-retrieval baseline rather than a test of naive retrieval. And a single backbone on a single benchmark is evaluated; whether the effect holds for models with thinner parametric knowledge is untested.
 

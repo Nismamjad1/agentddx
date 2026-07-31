@@ -28,7 +28,7 @@ Clinical note:
 
 
 def extract_entities(case: ClinicalCase) -> ExtractedEntities:
-    """Extract medical entities from a clinical case using Llama via Groq."""
+    """Extract medical entities from a clinical case using the shared backbone."""
     raw = llm_call(
         messages=[
             {"role": "system", "content": "You are a precise clinical NLP system. Output only valid JSON."},

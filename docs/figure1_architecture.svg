@@ -146,5 +146,5 @@
 <line x1="825" y1="654" x2="825" y2="662" stroke="#5F5E5A" stroke-width="1.4" marker-end="url(#ahg)"/>
 <rect x="682" y="664" width="286" height="48" rx="7" fill="#FFFFFF" stroke="#888780" stroke-width="1" stroke-dasharray="6 5"/>
 <text x="825" y="686" text-anchor="middle" font-size="17" font-weight="700" fill="#444441">Follow-up question</text>
-<text x="825" y="705" text-anchor="middle" font-size="15" fill="#5F5E5A">when confidence is low</text>
+<text x="825" y="705" text-anchor="middle" font-size="15" fill="#5F5E5A">when case is ambiguous</text>
 </svg>
